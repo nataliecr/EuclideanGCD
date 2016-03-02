@@ -7,21 +7,14 @@ public class GreatestCommonDivisor {
     int n1 = input.nextInt();
     System.out.print("Enter second integer: ");
     int n2 = input.nextInt();
-    int d;
-    int gcd = 1;
+    int temp;
     
-    if (n1 < n2)
-      d = n1;
-    else
-      d = n2;
-    
-    while (d >= 2){
-      if ((n1 % d == 0) && (n2 % d == 0))
-        gcd = d;
-      d--;
+    while (n2 != 0){
+      temp = n2;
+      n2 = n1 % n2;
+      n1 = temp;
     } // while
     
-    System.out.println("The greatest common divisor for " + n1 + " and " 
-            + n2 + " is " + gcd);
+    System.out.println("The greatest common divisor is " + n1);
   }  // main
 } // GreatestCommonDivisor
